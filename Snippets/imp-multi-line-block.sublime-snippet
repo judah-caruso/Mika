@@ -1,0 +1,8 @@
+<snippet>
+<content><![CDATA[
+;;${1:Writer's block}$0;;
+]]></content>
+<tabTrigger>;;</tabTrigger>
+<description>Writer's Header</description>
+<scope>source.mika</scope>
+</snippet>

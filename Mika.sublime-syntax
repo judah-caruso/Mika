@@ -46,12 +46,18 @@ contexts:
         - match: '\;\;'
           pop: true
 
+    # 80 Count
+    - match: '.{81,}'
+      scope: invalid
+
     # Comment
     - match: '[-]{2}.*$'
       scope: markup.italic.mika punctuation.definition.comment.mika
     # Bold
     - match: '[*].*[*]'
       scope: markup.bold.mika
+    - match: '[\`].*[\`]'
+      scope: markup.italic.mika
 
     # Fiat
     - match: '([$€£₩¥][0-9\.]*)'
