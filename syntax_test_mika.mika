@@ -1,0 +1,19 @@
+-- SYNTAX TEST "Packages/User/Mika/Mika.sublime-syntax"
+
+! HEADER !
+-- <- source storage
+
+-> Sub-header (with parenthetical)
+    -- <- support.function
+    Regular text, no formatting. (parenthetical)
+    -- <- source
+                                -- ^ punctuation.separator.continuation
+        * Non-numbered list item 1
+            -- <- markup.list.unnumbered
+        + Non-numbered list item 2
+                -- <-  markup.italic
+        3. Non-numbered list item 2
+                -- <- markup.list.numbered
+    Some more regular text and _some underlined text_.
+        -- <- source
+                                 -- ^ keyword.other

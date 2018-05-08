@@ -1,0 +1,83 @@
+%YAML 1.2
+---
+name: Mika
+file_extensions: [mika, mn, aln] # Mika, Mika Notation, Arrow Line Notation
+scope: source.mika
+contexts:
+  main: 
+    # Block Header
+    - match: '[#]\s*?[A-Z 0-9()\[\]{}]+?[#]'
+      scope: storage.mika header.block.mika
+
+    # Loud Header
+    - match: '[!]\s*?[A-Z 0-9()\[\]{}]+?[!]'
+      scope: storage.mika header.loud.mika
+
+    # At Header
+    - match: '[@]\s*?[A-Z 0-9()\[\]{}]+?[@]'
+      scope: storage.mika header.at.mika
+
+    # Arrow Lines
+    - match: '(\s*?|\t*?)?(?<=->\s).*'
+      scope: support.function.mika arrow.line.mika
+
+    # Arrow
+    - match: '(->)'
+      scope: comment.mika arrow.mika
+
+    # Parenthetical
+    - match: '[(].*?[)]'
+      scope: markup.italic.mika punctuation.separator.continuation.mika
+    # Underline
+    - match: '\_'
+      scope: markup.italic.mika keyword.other.mika
+      push:
+        - meta_scope: markup.italic.mika keyword.other.mika 
+        - match: '\_'
+          pop: true
+    # Block
+    - match: '[\[].*?[\]]'
+      scope: markup.raw.inline.mika
+    # Multi-line Block
+    - match: '\;\;'
+      scope: markup.raw.inline.mika
+      push:
+        - meta_scope: markup.raw.inline.mika
+        - match: '\;\;'
+          pop: true
+
+    # Comment
+    - match: '[-]{2}.*$'
+      scope: markup.italic.mika punctuation.definition.comment.mika
+    # Bold
+    - match: '[*].*[*]'
+      scope: markup.bold.mika
+
+    # Fiat
+    - match: '([$€£₩¥][0-9\.]*)'
+      scope: constant.numeric.mika currency.fiat.mika
+    # Crypto
+    - match: '([0-9\.].*?[A-Z]{3,4})'
+      scope: constant.numeric.mika currency.crypto.mika
+    # Numeral
+    - match: '(?=[0-9\.]).+?(?<=[0-9])'
+      scope: constant.numeric.mika
+
+    # Percentage
+    - match: '((\-|\+)?[0-9\.]*?\%\s)'
+      scope: constant.numeric.percentage.mika
+
+    # Increase
+    - match: '(?i)(increase).*?\[\+\]*(\s)?'
+      scope: markup.inserted.mika
+    # Decrease
+    - match: '(?i)(decrease).*?\[\-\]*(\s)?'
+      scope: markup.deleted.mika
+
+    # Numbered List
+    - match: '^(\s|\t)*?([0-9][.]\s)'
+      scope: markup.list.numbered.mika entity.name.function.constructor.list
+
+    # Non-numbered List
+    - match: '^(\s|\t)*?(([*+])\s)'
+      scope: markup.list.numbered.mika entity.name.function.constructor.list

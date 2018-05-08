@@ -1,0 +1,63 @@
+# MIKA # -- Block Header (used for main areas of text)
+    -> Introduction:
+        Mika is a general purpose markup language that was was designed 
+        to be simplistic, while being well structured and easy to read.
+    -> Mika's Goals Are:
+        + Ease of use
+        + Minimalism
+        + Structure
+
+    ! FEATURES ! -- Loud Header (used for emphasis)
+        -> Numerical:
+            Supported Fiat currencies:
+                $200 USD
+                €300 EUR
+                £500 GBP
+                ₩100 KRW
+                ¥400 JPY
+            Cryptocurrency support: 
+                1.00 BTC
+                0.466 ETH
+                10.3230 DASH
+            Percentages and changing values:
+                25% of 100 is 25
+                75.2% Increase [+] -- Green with syntax highlighting enabled
+                33.86% Decrease [-] -- Red with syntax highlighting enabled
+            Ordered and Unordered lists: 
+                + An additive list item
+                * A starred list item
+                1. A numeric list item
+        -> Implicative:
+            _Underlined_ -- Underlined text
+            _This text spans
+            multiple lines!_ -- Underlined text can span multiple lines
+            *Bold Text* -- Bolded text
+            [Block Text] -- Blocked/Separated text (similar to underlining)
+            ;;Multi-line 
+            blocks. Used for 
+            formatted data;; -- Multi-line block (aka: a "Writer's block")
+
+    @ RULES AND BEST PRACTICES @ -- AT Header (can be used stylistically)
+        Generally, Mika doesn't impose anything in terms of *how* to edit.
+        However, there are a few best practices to follow/reference when
+        writing with Mika:
+            1. Headers must be completely capitalized and can be swapped out.
+            2. Arrow lines are a single tab (4 spaces) ahead of main headers.
+            3. Arrow lines should usually end with a colon (:) unless it's
+            unwanted stylistically.
+            4. Writer's blocks can either be "Expaned" or "Compact":
+                Expanded:
+                    ;;
+                        This is the expanded form of a writer's block.
+                        You would use this for a snippet of code, haiku, etc... 
+                        Notice the 4 space characters leading each line inside 
+                        this block. This is a stylistic choice to improve the
+                        readability of content inside these blocks.
+                    ;;
+                Compact:
+                    ;;This is the compact form
+                    of a Writer's block. Used when style isn't very important;;
+                If neither form fits, use a [Block].
+            5. Character count per line should be below 80 characters total. 
+            However, this _should_ be adjusted to fit personal preference.
+
