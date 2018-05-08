@@ -34,6 +34,7 @@
                 * A starred list item
                 1. A numeric list item
         -> Implicative:
+            -- Comments
             _Underlined_ -- Underlined text
             _This text spans
             multiple lines!_ -- Underlined text can span multiple lines
